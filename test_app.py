@@ -18,3 +18,9 @@ def test_endpoint2(client: FlaskClient):
     assert response.status_code == 200
     json_data = response.get_json()
     assert json_data['message'] == 'Hello from endpoint2'
+
+def test_endpoint3(client: FlaskClient):
+    response = client.get('/api/endpoint3')
+    assert response.status_code == 200
+    json_data = response.get_json()
+    assert json_data['message'] == 'Hello from endpoint3'
